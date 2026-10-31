@@ -1,0 +1,11 @@
+# Started by the dashboard's "Refresh data" button. It does nothing itself: refresh_listener.sh on
+# the publishing Mac sees the new run within about 20 seconds and pulls from Superset.
+# Copied into the site repo by publish_site.sh.
+name: Refresh request
+on: workflow_dispatch
+permissions: {}
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Refresh requested. The publishing Mac picks this up and pulls from Superset."
